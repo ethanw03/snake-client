@@ -6,12 +6,12 @@ const connect = function() {
     port: 50541,
   });
 
-  // interpret incoming data as text
+ 
   conn.setEncoding("utf8");
-
   conn.on("connect", () => {
-    console.log("Connection Successful!");
+    console.log("Connection Successful!")
     conn.write("name: ENW");
+    // conn.write('Move: up')
   });
 
   conn.on("data", (data) => {
