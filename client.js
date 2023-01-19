@@ -2,16 +2,14 @@ const net = require("net");
 
 const connect = function() {
   const conn = net.createConnection({
-    host: "165.227.47.243",
+    host: "localhost",
     port: 50541,
   });
 
- 
   conn.setEncoding("utf8");
   conn.on("connect", () => {
-    console.log("Connection Successful!")
-    conn.write("name: ENW");
-    // conn.write('Move: up')
+    console.log("Connection Successful!");
+    conn.write("Name: ENW");
   });
 
   conn.on("data", (data) => {
@@ -20,4 +18,4 @@ const connect = function() {
   return conn;
 };
 
-module.exports = connect;
+module.exports = { connect };
